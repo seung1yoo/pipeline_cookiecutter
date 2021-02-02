@@ -1,1 +1,5 @@
-python /Users/seung1yoo/git/pipeline_cookiecutter/bin/config.py --input-info input_info --pipedir /Users/seung1yoo/git/pipeline_cookiecutter --workdir /Users/seung1yoo/git/pipeline_cookiecutter/test
+pipedir="/BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter"
+cmd="python $pipedir/bin/config.py --input-info input_info --pipedir $pipedir --workdir $pipedir/test"
+echo $cmd
+cmd="snakemake --cores all -s $pipedir/pipeline.snakefile"
+echo $cmd
