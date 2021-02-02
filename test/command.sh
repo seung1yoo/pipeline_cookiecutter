@@ -3,3 +3,5 @@ cmd="python $pipedir/bin/config.py --input-info input_info --pipedir $pipedir --
 echo $cmd
 cmd="snakemake --cores all -s $pipedir/pipeline.snakefile"
 echo $cmd
+cmd="rm -rf config.yaml analysis/ benchmarks/"
+echo $cmd
