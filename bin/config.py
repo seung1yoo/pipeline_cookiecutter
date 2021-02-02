@@ -33,10 +33,10 @@ class MakeConfig:
 
     def write_config_yaml(self, infn):
         outfh = open("config.yaml", "w")
-        outfh.write(f'pipedir = {os.path.abspath(self.pipedir)}\n')
+        outfh.write(f'pipedir: {os.path.abspath(self.pipedir)}\n')
         _path_params = os.path.join('config','params.yaml')
-        outfh.write(f'params = {os.path.join(os.path.abspath(self.pipedir), _path_params)}\n')
-        outfh.write(f'workdir = {os.path.abspath(self.workdir)}\n')
+        outfh.write(f'params: {os.path.join(os.path.abspath(self.pipedir), _path_params)}\n')
+        outfh.write(f'workdir: {os.path.abspath(self.workdir)}\n')
         outfh.write('\n')
         outfh.write('samples:\n')
         for line in open(infn):
