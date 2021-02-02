@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	task
+	1
+Select jobs to execute...
+
+[Tue Feb  2 13:04:38 2021]
+Job 0: running task for TN1
+
+python /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/bin/parser.py task --input analysis/inbam/TN1/TN1.bam --threads 4 --option 10 --output analysis/task/TN1/TN1.path
+[Tue Feb  2 13:04:39 2021]
+Finished job 0.
+1 of 1 steps (100%) done

@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	prep
+	1
+Select jobs to execute...
+
+[Tue Feb  2 13:04:55 2021]
+rule prep:
+    input: /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/test/input/sample_2.bam
+    output: analysis/inbam/TN2/TN2.bam
+    jobid: 0
+    wildcards: sample=TN2
+
+ln -s /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/test/input/sample_2.bam analysis/inbam/TN2/TN2.bam
+[Tue Feb  2 13:04:55 2021]
+Finished job 0.
+1 of 1 steps (100%) done
