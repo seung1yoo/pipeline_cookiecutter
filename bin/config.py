@@ -5,25 +5,26 @@ import yaml
 
 class Utils:
     def __init__(self, config):
-        pass
+        self.config = config
 
     def get_targets(self, targets):
         ls = list()
         if 'prep' in targets:
-            for sample in config["samples"]:
+            for sample in self.config["samples"]:
                 ls.append(f'analysis/inbam/{sample}/{sample}.bam')
         if 'task' in targets:
-            for sample in config["samples"]:
+            for sample in self.config["samples"]:
                 ls.append(f'analysis/task/{sample}/{sample}.path')
         return ls
 
-    def get_params(self, infn):
-        infh = open(infn)
+    def get_params(self, config):
+        infh = open(config['params'])
         params_dic = yaml.safe_load(infh)
         for prog, arg_dic in params_dic.items():
             for arg, value in arg_dic.items():
-                key = f'params_{arg}_{value}'
+                key = f'params_{prog}_{arg}'
                 config[key] = value
+        return config
 
 class MakeConfig:
     def __init__(self, infn, pipedir, workdir):

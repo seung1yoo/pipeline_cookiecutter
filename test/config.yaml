@@ -1,9 +1,9 @@
-pipedir = /Users/seung1yoo/git/pipeline_cookiecutter
-params = /Users/seung1yoo/git/pipeline_cookiecutter/config/params.yaml
-workdir = /Users/seung1yoo/git/pipeline_cookiecutter/test
+pipedir: /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter
+params: /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/config/params.yaml
+workdir: /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/test
 
 samples:
   TN1:
-    bam: /Users/seung1yoo/git/pipeline_cookiecutter/test/input/sample_1.bam
+    bam: /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/test/input/sample_1.bam
   TN2:
-    bam: /Users/seung1yoo/git/pipeline_cookiecutter/test/input/sample_2.bam
+    bam: /BiO/BioPeople/siyoo/pipeline/pipeline_cookiecutter/test/input/sample_2.bam

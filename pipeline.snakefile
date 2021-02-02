@@ -7,8 +7,9 @@ min_version('5.31.1')
 from bin.config import Utils
 
 configfile: "config.yaml"
+print(config)
 utils = Utils(config)
-utils.get_params(config['params'])
+utils.get_params(config)
 
 targets = list()
 targets.append('prep')
@@ -27,16 +28,16 @@ rule prep:
 
 rule task:
     input:
-        bam = 'analysis/inbam/{sample}/{sample}.bam'
+        bam = "analysis/inbam/{sample}/{sample}.bam"
     output:
         txt = "analysis/task/{sample}/{sample}.path"
-    message: "running task for {sample}"
-    benchmark: "benchmarks/task_1.txt"
+    message: "running task for {wildcards.sample}"
+    benchmark: "benchmarks/task.{sample}.txt"
     threads: 4
     params:
         option = config['params_task_option']
     shell:
-        "python bin/parser.py task"
+        "python {config[pipedir]}/bin/parser.py task"
         " --input {input.bam}"
         " --threads {threads}"
         " --option {params.option}"
