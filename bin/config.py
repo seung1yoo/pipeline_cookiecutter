@@ -5,15 +5,15 @@ import yaml
 
 class Utils:
     def __init__(self, config):
-        self.config = config
+        pass
 
     def get_targets(self, targets):
         ls = list()
         if 'prep' in targets:
-            for sample in self.config["samples"]:
+            for sample in config["samples"]:
                 ls.append(f'analysis/inbam/{sample}/{sample}.bam')
         if 'task' in targets:
-            for sample in self.config["samples"]:
+            for sample in config["samples"]:
                 ls.append(f'analysis/task/{sample}/{sample}.path')
         return ls
 
