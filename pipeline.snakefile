@@ -7,7 +7,6 @@ min_version('5.31.1')
 from bin.config import Utils
 
 configfile: "config.yaml"
-print(config)
 utils = Utils(config)
 utils.get_params(config)
 
